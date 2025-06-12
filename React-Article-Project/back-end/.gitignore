@@ -32,4 +32,5 @@ pids/
 *.seed
 *.pid.lock
 
+echo "front-end/full-stack-react-f8242-firebase-adminsdk-fbsvc-31cd182a3b.json" >> .gitignore
 
