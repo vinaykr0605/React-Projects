@@ -1,7 +1,7 @@
 import './App.css'
 import { AboutPage } from './pages/AboutPage'
 import { ArticleListPage } from './pages/ArticleListPage'
-import { ArticlePage } from './pages/ArticlePage'
+import { ArticlePage, loader as articleLoader } from './pages/ArticlePage'
 import HomePage from './pages/HomePage'
 import {
   createBrowserRouter,
@@ -9,6 +9,9 @@ import {
 } from "react-router-dom"
 import Layout from './Layout'
 import NotFoundPage from './pages/NotFoundPage'
+import LoginPage from './pages/LoginPage'
+import SignupPage from './pages/SignupPage'
+
 
 const routes = [{
   path: '/',
@@ -23,11 +26,20 @@ const routes = [{
   },
   {
     path: '/articles/:name',
-    element: <ArticlePage />
+    element: <ArticlePage />,
+    loader : articleLoader
   },
   {
     path: '/articles',
     element: <ArticleListPage />
+  },
+  {
+    path: '/login',
+    element: <LoginPage />
+  },
+  {
+    path : '/signup',
+    element : <SignupPage />
   }
   ]
 }]

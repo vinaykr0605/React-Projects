@@ -1,5 +1,6 @@
 # Node modules
 node_modules/
+credentials.json
 
 # Logs
 logs/
@@ -30,3 +31,5 @@ pids/
 *.pid
 *.seed
 *.pid.lock
+
+

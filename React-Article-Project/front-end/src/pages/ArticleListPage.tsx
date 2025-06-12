@@ -1,10 +1,10 @@
-import articles from "../article-content";
+import articles from "../types/article-content";
 import ArticleList from "../ArticleList";
 
 export function ArticleListPage() {
     return (
-        <div>
-            <h1>Article </h1>
+        <div >
+            <h1>Articles</h1>
             <ArticleList articles={articles} />
         </div>
     )
