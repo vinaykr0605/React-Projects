@@ -27,7 +27,7 @@ const routes = [{
   {
     path: '/articles/:name',
     element: <ArticlePage />,
-    loader : articleLoader
+    loader: articleLoader
   },
   {
     path: '/articles',
@@ -38,13 +38,11 @@ const routes = [{
     element: <LoginPage />
   },
   {
-    path : '/signup',
-    element : <SignupPage />
+    path: '/signup',
+    element: <SignupPage />
   }
   ]
 }]
-
-
 
 const router = createBrowserRouter(routes)
 

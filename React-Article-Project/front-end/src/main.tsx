@@ -15,7 +15,7 @@ const firebaseConfig = {
   appId: "1:899394804994:web:4e82bed3efed355eb1361b"
 };
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

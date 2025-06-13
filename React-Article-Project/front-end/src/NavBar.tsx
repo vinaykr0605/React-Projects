@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
-import {UserData} from "./types/user.interface";
-import useUser from "./useUSer";
+import { UserData } from "./types/user.interface";
+import useUser from "./useUser";
 
 
 export default function NavBar() {

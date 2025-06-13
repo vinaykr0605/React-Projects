@@ -1,17 +1,22 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 import express from "express";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import admin from "firebase-admin";
 import fs from "fs";
+import path from 'path';
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 
 // Use this syntax  for mongodb creating articles collection
-// const articleInfo = [
-//     { name: 'learn-react', upvotes: 0, comments: [] },
-//     { name: 'learn-node', upvotes: 0, comments: [] },
-//     { name: 'mongodb', upvotes: 0, comments: [] },
-// ];
+const articleInfo = [
+    { name: 'learn-react', upvotes: 26, comments: [] },
+    { name: 'learn-node', upvotes: 50, comments: [] },
+    { name: 'mongodb', upvotes: 10, comments: [] },
+];
 
 const credentials = JSON.parse(fs.readFileSync("credentials.json"));
 
@@ -26,7 +31,9 @@ app.use(express.json());
 let db;
 
 async function connectToDB() {
-    const uri = "mongodb://127.0.0.1:27017";
+    const uri = process.env.MONGODB_USERNAME
+        ? `mongosh "mongodb+srv://cluster0.otpailq.mongodb.net/" --apiVersion 1 --username ${process.env.MONGODB_USERNAME} --password {process.env.MONGODB_PASSWORD}`
+        : "mongodb://127.0.0.1:27017";
 
     const client = new MongoClient(uri, {
         serverApi: {
@@ -40,6 +47,12 @@ async function connectToDB() {
 
     db = client.db("full-stack-react-db");
 }
+
+app.use(express.static(path.join(__dirname, '../dist')))
+
+app.get(/^(?!\/api).+/, (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 
 app.get("/api/articles/:name", async (req, res) => {
     const name = req.params.name;
@@ -111,11 +124,12 @@ app.post("/api/articles/:name/comments", async (req, res) => {
     res.json(comment);
 });
 
+const PORT = process.env.PORT || 8000;
+
 async function start() {
     await connectToDB();
-    app.listen(8000, function () {
-        console.log("Server is running on port 8000");
+    app.listen(PORT, function () {
+        console.log('Server is listening on port ' + PORT);
     });
 }
-
 start();
