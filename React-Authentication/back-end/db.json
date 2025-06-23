@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "passwordHash": "$2b$10$JCTvARs1ToqgRZiL8GAAcOqoH8IxXgIQrmVQa5FO8GO7gtqICEgI.",
+      "info": {
+        "hairColor": "",
+        "faviouriteFood": "",
+        "bio": ""
+      },
+      "isVerified": false
+    },
+    {
+      "email": "test2@gmail.com",
+      "passwordHash": "$2b$10$RcnLDC9IvKBtLWvS7ffLruTvwNIwHJZb0JTl6rcll2wGKJ0jpipoe",
+      "info": {
+        "hairColor": "",
+        "faviouriteFood": "",
+        "bio": ""
+      },
+      "isVerified": false
+    },
+    {
+      "email": "test20@gmail.com",
+      "passwordHash": "$2b$10$Hes1jWwkkyCWK.bAXNGzkeKJlA1ZO5ooIPBa/idhM8cOb8KoxksaK",
+      "info": {
+        "hairColor": "",
+        "faviouriteFood": "",
+        "bio": ""
+      },
+      "isVerified": false
+    }
+  ]
+}
