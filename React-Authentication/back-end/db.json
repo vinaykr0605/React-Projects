@@ -21,11 +21,45 @@
       "isVerified": false
     },
     {
-      "email": "test20@gmail.com",
-      "passwordHash": "$2b$10$Hes1jWwkkyCWK.bAXNGzkeKJlA1ZO5ooIPBa/idhM8cOb8KoxksaK",
+      "id": "2ccfb6cc-6749-43f9-b7a3-75c11ac7cdac",
+      "email": "shaun@gmail.com",
+      "passwordHash": "$2b$10$KTctzMSuY8Fp0ectSqL9W.DwCk0vjgN6yRSeNCEHOUB17L9Va2Fdu",
       "info": {
         "hairColor": "",
-        "faviouriteFood": "",
+        "favoriteFood": "",
+        "bio": ""
+      },
+      "isVerified": false
+    },
+    {
+      "id": "0ee038f3-8bfa-44aa-9f94-17124d1ba21d",
+      "email": "shaun1@gmail.com",
+      "passwordHash": "$2b$10$ahZ2c87P6G4NqXNWQkzzBe1lQE.yfS09BiarX9CCUCVZDaV4ZeqFW",
+      "info": {
+        "hairColor": "",
+        "favoriteFood": "",
+        "bio": ""
+      },
+      "isVerified": false
+    },
+    {
+      "id": "6b0d38a1-32be-4907-987b-dbc8068708fa",
+      "email": "shaun2@gmail.com",
+      "passwordHash": "$2b$10$KcYa5qlSESpY.fmv/DlUFuRS06krwxwPQ6il1TypvZLYba8b2.TLu",
+      "info": {
+        "hairColor": "",
+        "favoriteFood": "",
+        "bio": ""
+      },
+      "isVerified": false
+    },
+    {
+      "id": "dd92a7b9-90df-4b40-b28d-ef1cfa5332de",
+      "email": "shaun3@gmail.com",
+      "passwordHash": "$2b$10$ubfeTOutj.Q2ckusRsLpleXOlyjJXx42x2g7RoJnfoQW20rEL/Pha",
+      "info": {
+        "hairColor": "",
+        "favoriteFood": "",
         "bio": ""
       },
       "isVerified": false
