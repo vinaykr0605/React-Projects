@@ -5,6 +5,7 @@ import { useToken } from './useToken';
 
 export const LogInPage = () => {
   const [token, setToken] = useToken();
+
   const [errorMessage, setErrorMessage] = useState('');
 
   const [emailValue, setEmailValue] = useState('');
@@ -15,14 +16,13 @@ export const LogInPage = () => {
   const navigate = useNavigate();
 
   const onLogInClicked = async () => {
-    const response = await axios.post('/api/log-in',{
-      email: email.value,
-      password: passwordValue
+    const response = await axios.post('/api/log-in', {
+      email: emailValue,
+      password: passwordValue,
     });
     const { token } = response.data;
     setToken(token);
-    navigate('/');
-
+    navigate('/', { replace: true });
   }
 
   return (

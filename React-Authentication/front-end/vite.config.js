@@ -7,9 +7,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: '<your url here>',
+        target: 'https://congenial-invention-97wp97rw69vjfxvv-3000.app.github.dev/',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   }

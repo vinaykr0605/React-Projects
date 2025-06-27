@@ -11,58 +11,40 @@
       "isVerified": false
     },
     {
-      "email": "test2@gmail.com",
-      "passwordHash": "$2b$10$RcnLDC9IvKBtLWvS7ffLruTvwNIwHJZb0JTl6rcll2wGKJ0jpipoe",
-      "info": {
-        "hairColor": "",
-        "faviouriteFood": "",
-        "bio": ""
-      },
-      "isVerified": false
-    },
-    {
-      "id": "2ccfb6cc-6749-43f9-b7a3-75c11ac7cdac",
-      "email": "shaun@gmail.com",
-      "passwordHash": "$2b$10$KTctzMSuY8Fp0ectSqL9W.DwCk0vjgN6yRSeNCEHOUB17L9Va2Fdu",
+      "id": "2c20e20e-824f-4659-bc33-301e9c4e894e",
+      "email": "vinay.1si19cs135+test22@gmail.com",
+      "passwordHash": "$2b$10$SQF1x631/GkNqsFLMHmCNu2LPW5wLIjIk6GIF218wG8Y/YpwGRcVu",
       "info": {
         "hairColor": "",
         "favoriteFood": "",
         "bio": ""
       },
-      "isVerified": false
+      "isVerified": false,
+      "verificationString": "73e3e70d-ee91-479f-bc98-a4d2dd37900b"
     },
     {
-      "id": "0ee038f3-8bfa-44aa-9f94-17124d1ba21d",
-      "email": "shaun1@gmail.com",
-      "passwordHash": "$2b$10$ahZ2c87P6G4NqXNWQkzzBe1lQE.yfS09BiarX9CCUCVZDaV4ZeqFW",
+      "id": "b833cb9b-b3de-4856-8559-4d2d805da440",
+      "email": "vinay.1si19cs135@gmail.com",
+      "passwordHash": "$2b$10$nT.kiY3/iWq5ZZL2UAE8G.S7nO4pCtleyi7pPx.TWdu1Pyy0RPERq",
       "info": {
         "hairColor": "",
         "favoriteFood": "",
         "bio": ""
       },
-      "isVerified": false
+      "isVerified": false,
+      "verificationString": "9b20a0f6-23c7-4e01-8f69-e0f3ae2ed8fa"
     },
     {
-      "id": "6b0d38a1-32be-4907-987b-dbc8068708fa",
-      "email": "shaun2@gmail.com",
-      "passwordHash": "$2b$10$KcYa5qlSESpY.fmv/DlUFuRS06krwxwPQ6il1TypvZLYba8b2.TLu",
+      "id": "b32d96d5-8360-44b2-962f-3faffb09aec3",
+      "email": "vinay.1s2323sad234s135@gmail.com",
+      "passwordHash": "$2b$10$nFRQDmB0FYajdljKGTUQBO36Wo6/ZNXvaApriaNdSHzbcjSrAyQ5O",
       "info": {
         "hairColor": "",
         "favoriteFood": "",
         "bio": ""
       },
-      "isVerified": false
-    },
-    {
-      "id": "dd92a7b9-90df-4b40-b28d-ef1cfa5332de",
-      "email": "shaun3@gmail.com",
-      "passwordHash": "$2b$10$ubfeTOutj.Q2ckusRsLpleXOlyjJXx42x2g7RoJnfoQW20rEL/Pha",
-      "info": {
-        "hairColor": "",
-        "favoriteFood": "",
-        "bio": ""
-      },
-      "isVerified": false
+      "isVerified": false,
+      "verificationString": "57956ad6-1a98-4129-a2bb-f35555a5e79a"
     }
   ]
 }
