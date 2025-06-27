@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const { v4: uuidv4 } = require("uuid");
 const { db, saveDb } = require("./db");
 const { sendEmail } = require("./sendEmail");
+const { getGoogleOauthUrl, getGoogleUser, updateOrCreateUserFromOauth } = require('./googleOauthUtil');
 
 const app = express();
 app.use(express.json());
@@ -178,5 +179,67 @@ app.put('/api/verify-email', async (req, res) => {
   })
 })
 
+app.put('/api/forgot-password/:email', async (req, res) => {
+  const { email } = req.params;
+
+  const user = db.users.find(user => user.email === email);
+  const passwordResetCode = uuidv4();
+
+  user.passwordResetCode = passwordResetCode;
+  saveDb();
+
+  try {
+    await sendEmail({
+      to: email,
+      from: 'vinay.1si19cs135@gmail.com',
+      subject: 'Password Reset',
+      text: `
+      To reset your password, click this link:
+      https://congenial-invention-97wp97rw69vjfxvv-5173.app.github.dev/reset-password/${passwordResetCode}
+      `
+    })
+    res.sendStatus(200);
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
+})
+
+app.put('/api/users/:passwordResetCode/reset-password', async (req, res) => {
+  const { passwordResetCode } = req.params;
+  const { newPassword } = req.body;
+
+  const user = db.users.find(user => user.passwordResetCode === passwordResetCode);
+
+  if (!user) {
+    return res.sendStatus(404);
+  }
+
+  const newPasswordHash = await bcrypt.hash(newPassword, 10);
+  user.passwordHash = newPasswordHash;
+  delete user.passwordResetCode;
+``
+  saveDb();
+
+  res.sendStatus(200);
+})
+
+app.get('/api/auth/google/url', (req, res) => {
+  const url = getGoogleOauthUrl();
+  res.status(200).json({ url });
+});
+
+app.get('/auth/google/callback', async (req, res) => {
+  const { code } = req.query;
+
+  const oauthUserInfo = await getGoogleUser(code);
+  const createdUser = await updateOrCreateUserFromOauth(oauthUserInfo);
+  const { id, isVerified, email, info } = createdUser;
+
+  jwt.sign({ id, isVerified, email, info }, process.env.JWT_SECRET, (err, token) => {
+    if (err) return res.sendStatus(500);
+    res.redirect(`https://automatic-space-memory-96gv4ggqw7pcxx4x-5173.app.github.dev/log-in?token=${token}`);
+  })
+});
 
 app.listen(3000, () => console.log("Server running on port 3000"));
